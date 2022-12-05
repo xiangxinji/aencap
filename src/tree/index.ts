@@ -16,8 +16,8 @@ export interface TreeOptions <T>{
  * @param options 树结构
  * @returns 
  */
-export function findParent<T = any>(
-  tree: any[],
+export function findParent<T>(
+  tree: T[],
   data: any,
   options: TreeOptions<T>
 ): null | T {
@@ -45,7 +45,7 @@ export function findParent<T = any>(
  * @returns 
  */
 export function findNode<T = any>(
-  tree: any[],
+  tree: T[],
   data: any,
   options: TreeOptions<T>
 ): null | T {
@@ -54,7 +54,7 @@ export function findNode<T = any>(
       return tree[index];
     }
     if (tree[index] && tree[index][options.children]) {
-      const result = findNode(tree[index].children, data, options);
+      const result = findNode((tree[index] as any)[options.children], data, options);
       if (result) return result;
     }
   }
@@ -85,3 +85,23 @@ export function flat<T>(tree: T[], options: TreeOptions<T>) {
   each(tree);
   return result;
 }
+
+
+/**
+ * 遍历树结构
+ * @param datas 树结构数据
+ * @param callback 回调函数 (node : 当前节点 , parent : 父节点)
+ */
+export function each<T>(datas: Array<T>, callback: Function , options : TreeOptions<T>) {
+  const _deep = (node: T, parent?: T) => {
+    if (callback) callback(node , parent);
+    if (node[options.children] && (node[options.children] as unknown as Array<any>).length > 0) {
+      (node[options.children] as unknown as Array<any>).forEach((i) => _deep(i, node));
+    }
+  };
+  datas.forEach((i) => _deep(i));
+}
+
+
+
+
