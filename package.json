@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "自定义功能封装库",
   "type": "module",
-  "typings": "types",
-
+  "types":"./types",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
