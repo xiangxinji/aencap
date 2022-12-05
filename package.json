@@ -1,12 +1,14 @@
 {
-  "name": "aencap",
+  "name": "@aurora/aencap",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "自定义功能封装库",
+  "type": "module",
+  "typings": "types",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["hooks" , "utils"],
   "author": "",
   "license": "ISC"
 }
