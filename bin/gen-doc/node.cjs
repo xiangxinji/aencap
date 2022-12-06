@@ -41,7 +41,7 @@ function createTextNode(content) {
   return {
     type: "text",
     code() {
-      return content;
+      return content + '\r\n';
     },
   };
 }
@@ -66,6 +66,8 @@ function createTableNode(headers, rows) {
     },
   };
 }
+
+
 
 module.exports = {
   createHeadingNode,
