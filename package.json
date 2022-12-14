@@ -5,8 +5,8 @@
   "type": "module",
   "types": "./types",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1" , 
-    "gen-doc" : "node ./bin/gen-doc/index.cjs"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen-doc": "node ./bin/gen-doc/index.cjs"
   },
   "keywords": [
     "hooks",
@@ -16,5 +16,14 @@
   "license": "ISC",
   "devDependencies": {
     "gogocode": "^1.0.55"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./base": "./lib/base/index.js",
+    "./dom": "./lib/dom/index.js",
+    "./hooks": "./lib/hooks/index.js",
+    "./interactive": "./lib/interactive/index.js",
+    "./tree": "./lib/tree/index.js",
+    "./validate": "./lib/validate/index.js"
   }
 }
