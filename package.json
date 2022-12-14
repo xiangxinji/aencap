@@ -1,9 +1,10 @@
 {
-  "name": "@aurora/aencap",
+  "name": "@binary-star/aencap",
   "version": "1.0.0",
   "description": "自定义功能封装库",
   "type": "module",
-  "types": "./types",
+  "types": "./types/index.d.ts",
+  "private":false , 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gen-doc": "node ./bin/gen-doc/index.cjs"
