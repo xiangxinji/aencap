@@ -1,6 +1,7 @@
 /**
  * 基础工具
  */
-export default {
 
-}
+export * from "./modules/object";
+
+export * from "./modules/date";

@@ -53,4 +53,14 @@ export function isLower(str: string) {
   return false;
 }
 
+/**
+ * 是否是外部链接
+ * @param value url 字符串
+ * @returns 
+ */
+export function isOutlink(value: string) {
+  return /^https?:\/\//.test(value);
+}
+
+
 
