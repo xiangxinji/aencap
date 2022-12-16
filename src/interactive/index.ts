@@ -3,3 +3,5 @@
  */
 
 export * from './modules/event'
+export * from './modules/functions'
+export * from './modules/storage'
