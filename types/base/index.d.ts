@@ -1,5 +1,5 @@
-declare const _default: {};
 /**
  * 基础工具
  */
-export default _default;
+export * from "./modules/object";
+export * from "./modules/date";

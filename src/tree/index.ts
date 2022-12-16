@@ -3,10 +3,10 @@
  */
 
 
-export interface TreeOptions <T>{
-    key : keyof T ,
-    children : keyof T ,
-    parentKey ?: keyof T 
+export interface TreeOptions<T> {
+  key: keyof T,
+  children: keyof T,
+  parentKey?: keyof T
 }
 
 /**
@@ -49,16 +49,23 @@ export function findNode<T = any>(
   data: any,
   options: TreeOptions<T>
 ): null | T {
-  for (let index = 0; index < tree.length; index++) {
-    if (tree[index][options.key] === data) {
-      return tree[index];
+  let result: T | null = null
+  function find(tree: T[]): any {
+    for (let index = 0; index < tree.length; index++) {
+      const node = tree[index]
+
+      if (node[options.key] === data[options.key]) {
+        result = node
+      }
+      if (tree[index] && tree[index][options.children] && !result) {
+        result = find((tree[index] as any)[options.children]);
+        if (result) return result;
+      }
     }
-    if (tree[index] && tree[index][options.children]) {
-      const result = findNode((tree[index] as any)[options.children], data, options);
-      if (result) return result;
-    }
+    return null
   }
-  return null;
+  find(tree)
+  return result;
 }
 
 /**
@@ -71,7 +78,7 @@ export function flat<T>(tree: T[], options: TreeOptions<T>) {
   const result: T[] = [];
   function each(tree: T[], p?: T) {
     for (let i = 0; i < tree.length; i++) {
-      const parent :any = tree[i] as T;
+      const parent: any = tree[i] as T;
       if (p && options.parentKey) parent[options.parentKey] = p[options.key];
       result.push({
         ...parent,
@@ -92,9 +99,9 @@ export function flat<T>(tree: T[], options: TreeOptions<T>) {
  * @param datas 树结构数据
  * @param callback 回调函数 (node : 当前节点 , parent : 父节点)
  */
-export function each<T>(datas: Array<T>, callback: Function , options : TreeOptions<T>) {
+export function each<T>(datas: Array<T>, callback: Function, options: TreeOptions<T>) {
   const _deep = (node: T, parent?: T) => {
-    if (callback) callback(node , parent);
+    if (callback) callback(node, parent);
     if (node[options.children] && (node[options.children] as unknown as Array<any>).length > 0) {
       (node[options.children] as unknown as Array<any>).forEach((i) => _deep(i, node));
     }

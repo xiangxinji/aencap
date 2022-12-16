@@ -37,3 +37,9 @@ export declare function isUpper(str: string): boolean;
  * @returns
  */
 export declare function isLower(str: string): boolean;
+/**
+ * 是否是外部链接
+ * @param value url 字符串
+ * @returns
+ */
+export declare function isOutlink(value: string): boolean;
