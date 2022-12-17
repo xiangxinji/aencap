@@ -1,6 +1,3 @@
-/**
- * 处理对象数据
- */
 
 import { isObject } from "../../validate/index";
 

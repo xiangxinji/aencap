@@ -67,6 +67,16 @@ function createTableNode(headers, rows) {
   };
 }
 
+// 创建一个片段节点
+function createFragmentNode() {
+  return {
+    type: 'fragment',
+    code() {
+      return '\r\n'
+    },
+    children: []
+  }
+}
 
 
 module.exports = {
@@ -74,4 +84,5 @@ module.exports = {
   createBodyNode,
   createTextNode,
   createTableNode,
+  createFragmentNode
 };

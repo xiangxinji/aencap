@@ -3,5 +3,4 @@
  */
 
 export * from "./modules/object";
-
 export * from "./modules/date";

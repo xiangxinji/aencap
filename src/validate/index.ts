@@ -4,15 +4,15 @@
 
 /**
  * 是否定义
- * @param v
- * @returns
+ * @param v 数据
+ * @returns boolean 是否定义
  */
 export function isDef(v: any) {
   return v !== null && typeof v !== "undefined";
 }
 /**
  * 是否必填
- * @param v
+ * @param v 数据
  * @returns
  */
 export function required(v: any) {
@@ -28,8 +28,8 @@ export function isObject(obj: object) {
 }
 /**
  * 是否是数组
- * @param obj
- * @returns
+ * @param arr 数据
+ * @returns 
  */
 export function isArray(arr: Array<any>) {
   return Array.isArray(arr);

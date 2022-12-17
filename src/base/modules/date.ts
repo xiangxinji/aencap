@@ -1,10 +1,6 @@
 /**
- * 处理时间和日期数据
- */
-
-
-/**
  * 获取当前时间
+ * @param 无
  * @returns Date 
  */
 export function now () {

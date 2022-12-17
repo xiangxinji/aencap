@@ -3,13 +3,13 @@
  */
 /**
  * 是否定义
- * @param v
+ * @param v 值
  * @returns
  */
 export declare function isDef(v: any): boolean;
 /**
  * 是否必填
- * @param v
+ * @param v 值
  * @returns
  */
 export declare function required(v: any): boolean;
@@ -21,7 +21,7 @@ export declare function required(v: any): boolean;
 export declare function isObject(obj: object): boolean;
 /**
  * 是否是数组
- * @param obj
+ * @param obj 对象
  * @returns
  */
 export declare function isArray(arr: Array<any>): boolean;

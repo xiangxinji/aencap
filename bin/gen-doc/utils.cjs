@@ -29,9 +29,11 @@ function getMarkdownTableHeaderLine(headers) {
 }
 // 生成 markdown table
 function getMarkdownTableRows(rows) {
-  return rows.map((i) => {
+  const t = rows.map((i) => {
     return `| ${i.map((j) => ` ${j} `).join("|")} |`;
-  }).join('\r\n');
+  });
+
+  return t.join('\r\n') 
 }
 module.exports = {
   getModuleTitleLevel,
