@@ -1,4 +1,3 @@
-
 import { isObject } from "../../validate/index";
 
 /**
@@ -27,3 +26,14 @@ export function includeKeys<T extends Object>(data: T, keys: Array<string>) {
   return t;
 }
 
+/**
+ * 遍历这个对象
+ * @param obj 目标对象
+ * @param callback 回调函数, { value : 值 , key : 键 }
+ */
+export function each(obj: object, callback: Function) {
+  //@ts-ignore 
+  Object.keys(obj).forEach((key : keyof typeof obj) => {
+    callback({ value: obj[key], key: key });
+  });
+}
