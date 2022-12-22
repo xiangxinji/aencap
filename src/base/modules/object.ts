@@ -32,8 +32,23 @@ export function includeKeys<T extends Object>(data: T, keys: Array<string>) {
  * @param callback 回调函数, { value : 值 , key : 键 }
  */
 export function each(obj: object, callback: Function) {
-  //@ts-ignore 
-  Object.keys(obj).forEach((key : keyof typeof obj) => {
+  //@ts-ignore
+  Object.keys(obj).forEach((key: keyof typeof obj) => {
     callback({ value: obj[key], key: key });
   });
+}
+
+/**
+ * 遍历这个对象, 返回一个新的对象
+ * @param obj 目标对象 
+ * @param callback 执行回调 { value : 值 , key : 键 }
+ */
+export function map(obj: object, callback: Function) {
+  let r: any = {};
+  //@ts-ignore
+  Object.keys(obj).forEach((key: keyof typeof obj) => {
+    let res = callback({ value: obj[key], key: key });
+    r[key] = res;
+  });
+  return r;
 }
