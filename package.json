@@ -16,7 +16,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gogocode": "^1.0.55"
+    "gogocode": "^1.0.55",
+    "vue": "^3.2.47"
   },
   "exports": {
     ".": "./lib/index.js",

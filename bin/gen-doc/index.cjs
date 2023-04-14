@@ -10,6 +10,7 @@ const code = fs.readFileSync(path.resolve(__dirname, '../../src/index.ts'), 'utf
 const AST = $(code, {
 });
 
+
 const node = AST.find('/**$_$0*/')[0]
 
 let str = node.nodePath.value.value.replace(/[*/ ]/g, '')

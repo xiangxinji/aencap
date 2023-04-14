@@ -1,5 +1,6 @@
 /**
- *  Vue3 hooks 
+ *  Vue3 hooks
  */
+export * from './modules/functions/useCachedFunction'
+export * from './modules/logic/useNumberScope'
 
-export default {}
