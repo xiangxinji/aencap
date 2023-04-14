@@ -24,6 +24,10 @@ const createNav = () => {
         text: "交互",
       link: "/interactive",
     },
+    {
+      text : '更新日志' , 
+      link : '/change-log'
+    }
   ];
 };
 export default {
