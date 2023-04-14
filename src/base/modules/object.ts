@@ -12,8 +12,6 @@ export function includeKeys<T extends Object>(data: T, keys: Array<string>) {
       const k = parentKey ? parentKey + "." + key : key;
       const exis = keys.find((i) => i === k);
       if (exis) {
-        console.log(resNode);
-
         if (isObject(node[key])) {
           const res = {};
           _deep(node[key], k, res);
