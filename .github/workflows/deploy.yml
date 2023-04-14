@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: 16
           cache: yarn
+      - run: yarn
       - name: Build
-        run: yarn 
         run: yarn docs:build
       - uses: actions/configure-pages@v2
       - uses: actions/upload-pages-artifact@v1
