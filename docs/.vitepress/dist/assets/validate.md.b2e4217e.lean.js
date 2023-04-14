@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,N as l}from"./chunks/framework.0799945b.js";const i=JSON.parse('{"title":"验证","description":"","frontmatter":{},"headers":[],"relativePath":"validate.md"}'),o={name:"validate.md"},p=l("",22),e=[p];function t(c,r,D,y,A,F){return n(),a("div",null,e)}const u=s(o,[["render",t]]);export{i as __pageData,u as default};
