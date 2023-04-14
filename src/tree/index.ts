@@ -33,7 +33,7 @@ export function findParent<T>(
     }
   }
   const r = find(tree, data, options.key);
-  if (r === tree) return null;
+  if (r === data) return null;
   return r;
 }
 
@@ -54,12 +54,11 @@ export function findNode<T = any>(
     for (let index = 0; index < tree.length; index++) {
       const node = tree[index]
 
-      if (node[options.key] === data[options.key]) {
+      if (node[options.key] === data) {
         result = node
       }
       if (tree[index] && tree[index][options.children] && !result) {
-        result = find((tree[index] as any)[options.children]);
-        if (result) return result;
+        find((tree[index] as any)[options.children]);
       }
     }
     return null
