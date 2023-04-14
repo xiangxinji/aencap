@@ -33,6 +33,7 @@ const createNav = () => {
 export default {
   title: "Aencap",
   lang: "zh-CN",
+  base: '/aencap/',
   themeConfig: {
     nav: createNav(),
   },
