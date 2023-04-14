@@ -4,6 +4,10 @@
   "description": "自定义功能封装库",
   "types": "./types",
   "private": false,
+  "homepage": "https://xiangxinji.github.io/aencap/",
+  "repository": {
+    "url": "https://github.com/xiangxinji/aencap"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gen-doc": "node ./bin/gen-doc/index.cjs",
