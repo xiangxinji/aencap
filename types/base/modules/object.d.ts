@@ -16,3 +16,18 @@ export declare function each(obj: object, callback: Function): void;
  * @param callback 执行回调 { value : 值 , key : 键 }
  */
 export declare function map(obj: object, callback: Function): any;
+/**
+ * 嵌套设置对象的值
+ * @param data
+ * @param key
+ * @param value
+ * @returns
+ */
+export declare function linkSet(data: any, key: string, value: any): any;
+/**
+ * 嵌套获取对象的值
+ * @param data
+ * @param key
+ * @returns
+ */
+export declare function linkGet(data: any, key: string): any;
