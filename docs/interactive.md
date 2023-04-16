@@ -77,3 +77,45 @@ storage.remove("key");
 storage.clear();
 
 ```
+
+
+
+## downloadFile 
+
+将 blob 文件流让浏览器自动跳转下载 
+
+```ts
+import { interactive } from '@binary-star/aencap'
+
+const { downloadFile } = interactive
+
+downloadFile('# blob data' , 'filename.txt')
+```
+
+## doubleClick
+
+判断为单击还是双击， 默认200ms 内，执行了两次就算双击
+
+```ts
+import { interactive } from '@binary-star/aencap'
+
+const { doubleClick } = interactive
+
+doubleClick(() => {
+    console.log('用户执行了双击');
+},200)
+```
+
+## resolveLocationSearch
+
+将 url 的参数部分解析为对象
+
+```ts
+import { interactive } from '@binary-star/aencap'
+
+const { resolveLocationSearch } = interactive
+
+const data = resolveLocationSearch('http://localhost:8080/?a=1&b=2&c=3')
+
+console.log(data); // {a: '1', b: '2', c: '3'}
+```
