@@ -1,4 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { SearchPlugin } from "vitepress-plugin-search";
+
+
 const createNav = () => {
   return [
     {
@@ -35,6 +38,11 @@ export default defineConfig({
   title: "Aencap",
   lang: "zh-CN",
   base: '/aencap/',
+  vite : {
+    plugins : [
+      SearchPlugin()
+    ]
+  },
   themeConfig: {
     nav: createNav(),
     search: {

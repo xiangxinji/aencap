@@ -9,7 +9,6 @@
     "gen-doc": "node ./bin/gen-doc/index.cjs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs"
-
   },
   "keywords": [
     "hooks",
@@ -18,8 +17,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "flexsearch": "^0.7.31",
     "gogocode": "^1.0.55",
     "vitepress": "^1.0.0-alpha.65",
+    "vitepress-plugin-search": "^1.0.4-alpha.20",
     "vue": "^3.2.47"
   },
   "exports": {
