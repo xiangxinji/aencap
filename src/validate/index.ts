@@ -1,6 +1,4 @@
-/**
- * 判断函数
- */
+export * as rules from "./rules";
 
 /**
  * 是否定义
@@ -29,7 +27,7 @@ export function isObject(obj: object) {
 /**
  * 是否是数组
  * @param arr 数据
- * @returns 
+ * @returns
  */
 export function isArray(arr: Array<any>) {
   return Array.isArray(arr);
@@ -46,7 +44,7 @@ export function isUpper(str: string) {
 /**
  * 是否全小写
  * @param str 字符串
- * @returns 
+ * @returns
  */
 export function isLower(str: string) {
   if (str === str.toLocaleLowerCase()) return true;
@@ -56,11 +54,16 @@ export function isLower(str: string) {
 /**
  * 是否是外部链接
  * @param value url 字符串
- * @returns 
+ * @returns
  */
 export function isOutlink(value: string) {
   return /^https?:\/\//.test(value);
 }
 
+export function isDevEnv(v: string) {
+  return v.toUpperCase() === "DEVELOPMENT";
+}
 
-
+export function isTestEnv(v: string) {
+  return v.toUpperCase() === "TEST";
+}
