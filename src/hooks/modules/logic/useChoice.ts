@@ -6,8 +6,8 @@ type Option = { label: string; key: string | number };
 /**
  * 处理单选逻辑
  */
-export function useChoice<T extends Option>(
-  options: Array<T>,
+export function useChoice(
+  options: Array<Option>,
   config: {
     defaultKeys?: string[];
     defaultKey?: string;
@@ -17,7 +17,7 @@ export function useChoice<T extends Option>(
 ) {
   const state = reactive({
     current: [] as string[],
-    datas: options as Array<T>,
+    datas: options as Array<Option>,
     //   是否编辑
     disabled: !!config.disabled,
   });
@@ -37,7 +37,7 @@ export function useChoice<T extends Option>(
 
   const context = {
     // 添加数据
-    setOptions(options: Array<T>) {
+    setOptions(options: Array<Option>) {
       state.datas = options as any;
     },
     // 更改当前元素, 如果是选择, 则取消选择, 如果未选择,则选择
