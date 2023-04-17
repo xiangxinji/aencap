@@ -134,3 +134,29 @@ const data = {
 
 console.log(linkGet(data , 'user.name')); // John
 ```
+
+
+## toFixed
+
+```ts
+import { toFixed } from "@binary-star/aencap/base";
+
+console.log(toFixed(12.3444444 , 2));  // 12.34
+
+```
+
+
+## computeTwoNumber
+
+两个数进行运算 
+
+```ts
+
+import { computeTwoNumber } from "@binary-star/aencap/base";
+
+console.log(computeTwoNumber(1, 2, '+')); // 3
+```
+
+
+## floatCalculate 
+

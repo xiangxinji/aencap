@@ -1,5 +1,70 @@
 # 验证
 
+## rules 
+
+使用方式 
+
+
+```vue
+<template>
+    <el-form :rules="formRules">
+    <!-- ...  -->
+    </el-form>
+</template>
+<script setup lang="ts">
+import { validate } from "@binary-star/aencap";
+const { rules } = validate 
+
+const formRules = {
+    name : [
+        rules.required , 
+    ],
+    email : [
+        rules.required , 
+        rules.email
+    ]
+}
+</script>
+
+```
+
+element-plus / element-ui  通用校验规则
+
+### required 
+必填项
+
+
+### password 
+密码
+
+
+### email
+邮箱
+
+### phone
+手机
+
+### cn 
+中文
+
+### en 
+字母
+
+### number 
+数字
+
+
+### positiveNumber 
+正数
+
+
+### numberOrEn 
+数字或字母
+
+
+### numberOrEnOrUnderline 
+数字字母下划线
+
 ## isDef
 
 是否不为 null 或者 undefined
@@ -112,3 +177,4 @@ console.log(isOutlink('http://aaa')); // true
 console.log(isOutlink('https://aaa')); // true 
 
 ```
+

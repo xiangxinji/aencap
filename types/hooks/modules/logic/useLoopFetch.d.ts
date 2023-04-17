@@ -1,7 +1,7 @@
 /**
  * 加载功能工具
  */
-type LoopFetchParams = {
+declare type LoopFetchParams = {
     immediate?: boolean;
     onFetchBefore?: Function;
     onFetchEnd?: Function;

@@ -1,5 +1,5 @@
-import { deepClone } from "src/base";
-import { isDef, required } from "src/validate";
+import { deepClone } from "../../../base";
+import { isDef, required } from "../../../validate";
 import { reactive, computed } from "vue";
 
 type Option = { label: string; key: string | number };

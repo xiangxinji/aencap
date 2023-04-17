@@ -118,3 +118,37 @@ useLoopFetch(() => {
     immediate: true
 })
 ```
+
+## useFetchScope
+
+传入请求函数， 生成对应的响应式状态， 如加载中，已结束，错误，还有数据
+
+
+```ts
+import { useFetchScope } from "@binary-star/aencap/hooks";
+
+const [fetchState, start] = useFetchScope(() => new Promise((res) => {
+  setTimeout(() => {
+    res(1)
+  }, 2000)
+}))
+```
+
+
+
+
+## useChoice 
+
+用于选择逻辑， 如单选， 多选逻辑等。 
+
+```ts
+import { useChoice } from "@binary-star/aencap/hooks";
+
+const [choiceState, choiceContext] = useChoice([
+  { label: '張三', key: 1 },
+  { label: '李四', key: 2 },
+], {
+  multiple: true,
+  defaultKeys: []
+})
+```
