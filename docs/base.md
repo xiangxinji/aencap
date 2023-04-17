@@ -61,3 +61,76 @@ const t = map({ name: "zhangsan", age: 15, gender: 1 }, ({ key, value }: any) =>
 
 console.log(t); // { name: 'zhangsan', age: 20, gender: 1 }
 ```
+
+
+## convertToChinaNum 
+
+将 数字转换为中文大写单位 如：1234567890 -> 十二亿三千四百五十六万七千八百九十
+
+```ts
+import { base } from '@binary-star/aencap'
+const { convertToChinaNum} = base
+convertToChinaNum(1234567890)
+```
+
+
+## sleep 
+返回一个 Promise，等待指定的时间后 resolve
+
+通常可以搭配 async / await 使用
+```ts
+import { base } from '@binary-star/aencap'
+const { sleep } = base
+
+const start = async () => {
+    await sleep(3000)
+    console.log('start');
+}
+
+start()
+```
+
+
+## secondToString
+时间戳转换为时间字符串
+
+```ts
+import { base } from '@binary-star/aencap'
+const { secondToString } = base
+
+console.log(secondToString(120)); // 120 -> 2 分钟
+```
+## linkSet 
+使用 '.' 进行深度设置对象值 
+
+```ts
+import { base } from '@binary-star/aencap'
+
+const { linkSet } = base 
+const data = {
+    user : {
+        name : 'John',
+    },
+}
+
+linkSet(data , 'user.name' , 'Alice')
+console.log(data.user.name); // Alice 
+
+```
+
+## linkGet 
+
+使用 '.' 进行深度获取对象值
+
+```ts
+import { base } from '@binary-star/aencap'
+
+const { linkGet } = base 
+const data = {
+    user : {
+        name : 'John',
+    },
+}
+
+console.log(linkGet(data , 'user.name')); // John
+```

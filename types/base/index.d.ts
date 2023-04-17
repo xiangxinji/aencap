@@ -3,3 +3,5 @@
  */
 export * from "./modules/object";
 export * from "./modules/date";
+export * from './modules/time';
+export * from './modules/lang';
