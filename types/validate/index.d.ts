@@ -1,6 +1,4 @@
-/**
- * 判断函数
- */
+export * as rules from "./rules";
 /**
  * 是否定义
  * @param v 数据
@@ -43,3 +41,5 @@ export declare function isLower(str: string): boolean;
  * @returns
  */
 export declare function isOutlink(value: string): boolean;
+export declare function isDevEnv(v: string): boolean;
+export declare function isTestEnv(v: string): boolean;

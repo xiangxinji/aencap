@@ -31,3 +31,4 @@ export declare function linkSet(data: any, key: string, value: any): any;
  * @returns
  */
 export declare function linkGet(data: any, key: string): any;
+export declare function deepClone(t: any): any;
