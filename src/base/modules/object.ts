@@ -89,3 +89,10 @@ export function linkGet(data: any, key: string) {
   });
   return temp;
 }
+
+
+
+export function deepClone (t : any ) {
+  return JSON.parse(JSON.stringify(t))
+  
+}
