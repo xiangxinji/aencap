@@ -39,9 +39,20 @@ declare module "@binary-star/aencap/validate" {
 }
 ```
 
+
 条件引入的代码如下  , 以调用树结构的 findParent 方法为例子： 
 ```ts
 import { findParent } from '@binary-star/aencap/tree'
+```
+
+如果此时依然没有类型检查， 可以查看 tsconfig.json 中的 "moduleResolution" 字段是否为 "node" 。 
+
+```json
+{
+  "compilerOptions":{
+    "moduleResolution": "node"
+  }
+}
 ```
 
 
