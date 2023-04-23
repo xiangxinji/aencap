@@ -67,3 +67,21 @@ export function isDevEnv(v: string) {
 export function isTestEnv(v: string) {
   return v.toUpperCase() === "TEST";
 }
+
+/**
+ * 是否是 rgb 颜色字符串 如 rgb(0,0,0)
+ * @param str 
+ * @returns 
+ */
+export function isRgb(str: string) {
+  return str.indexOf('rgb(') === 0
+}
+
+/**
+ * 是否是 rgba 颜色字符串 如 rgba(0,0,0,0)
+ * @param str 
+ * @returns 
+ */
+export function isRgba(str: string) {
+  return str.indexOf('rgba(') === 0
+}
