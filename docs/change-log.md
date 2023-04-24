@@ -1,6 +1,6 @@
 # 更新日志
 
-## 1.0.6
+## 1.0.7
 1. 增加 isRgb , isRgba 验证方法
 2. 增加 splitIgnoreQuotes 方法
 

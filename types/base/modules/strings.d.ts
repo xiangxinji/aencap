@@ -4,4 +4,4 @@
  * @param separator
  * @returns
  */
-export declare function splitIgnoreQuotes(str: string, separator?: string): string[];
+export declare function splitIgnoreQuotes(str: string): string[];

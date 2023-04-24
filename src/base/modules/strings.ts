@@ -4,21 +4,21 @@
  * @param separator 
  * @returns 
  */
-export function splitIgnoreQuotes(str: string, separator = ',') {
-    let result = [];
-    let inQuote = false;
-    let current = "";
+export function splitIgnoreQuotes(str: string) {
+    const result: string[] = []
+    let begin = 0
+    let hasQuotes = false
     for (let i = 0; i < str.length; i++) {
-        const char = str[i];
-        if (char === '"' || char === "'") {
-            inQuote = !inQuote;
-        } else if (char === separator && !inQuote) {
-            result.push(current);
-            current = "";
-        } else {
-            current += char;
-        }
+      const char = str[i]
+      if (['"', "'"].includes(char)) {
+        hasQuotes = !hasQuotes
+      }
+      if (char === ',' && !hasQuotes) {
+        result.push(str.substring(begin, i))
+        begin = i + 1
+      } else if (i === str.length - 1) {
+        result.push(str.substring(begin))
+      }
     }
-    result.push(current);
-    return result;
-}
+    return result 
+  }
