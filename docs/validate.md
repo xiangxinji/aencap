@@ -178,3 +178,50 @@ console.log(isOutlink('https://aaa')); // true
 
 ```
 
+
+
+## isDevEnv 
+```ts
+import { validate } from "@binary-star/aencap";
+
+const { isDevEnv } = validate;
+
+console.log(isDevEnv('development')) // true 
+
+```
+
+
+## isTestEnv 
+
+
+```ts
+import { validate } from "@binary-star/aencap";
+
+const { isTestEnv } = validate;
+
+console.log(isTestEnv('test')) // true 
+
+```
+
+
+## isRgb
+
+```ts
+import { validate } from "@binary-star/aencap";
+
+const { isRgb } = validate;
+
+console.log(isRgb('rgb(0,0,0)')) // true 
+
+```
+
+## isRgba
+
+```ts
+import { validate } from "@binary-star/aencap";
+
+const { isRgba } = validate;
+
+console.log(isRgba('rgba(0,0,0,0)')) // true 
+
+```

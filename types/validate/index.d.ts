@@ -43,3 +43,15 @@ export declare function isLower(str: string): boolean;
 export declare function isOutlink(value: string): boolean;
 export declare function isDevEnv(v: string): boolean;
 export declare function isTestEnv(v: string): boolean;
+/**
+ * 是否是 rgb 颜色字符串 如 rgb(0,0,0)
+ * @param str
+ * @returns
+ */
+export declare function isRgb(str: string): boolean;
+/**
+ * 是否是 rgba 颜色字符串 如 rgba(0,0,0,0)
+ * @param str
+ * @returns
+ */
+export declare function isRgba(str: string): boolean;

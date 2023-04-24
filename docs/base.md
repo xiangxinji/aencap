@@ -157,6 +157,13 @@ import { computeTwoNumber } from "@binary-star/aencap/base";
 console.log(computeTwoNumber(1, 2, '+')); // 3
 ```
 
+## splitIgnoreQuotes
 
-## floatCalculate 
+将字符串以 “,” 进行分割， 但不包括字符串中的 “,” 
 
+
+```ts
+import { splitIgnoreQuotes } from "@binary-star/aencap/base";
+
+console.log(splitIgnoreQuotes('a,b,c,"d,e,f"')) // ['a','b','c','"d,e,f"']
+```
