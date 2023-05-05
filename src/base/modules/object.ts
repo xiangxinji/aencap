@@ -93,7 +93,14 @@ export function deepClone(t: any) {
   return JSON.parse(JSON.stringify(t));
 }
 
-export function dispatch(target: any, methodName: any) {
+/**
+ * 包装此对象的方法, 并且转发到源对象的方法上
+ * @param t 
+ * @param methodName 
+ * @returns 
+ */
+export function callDispatch(t: any | (() => any), methodName: any) {
+  const target = typeof t === "function" ? t() : t;
   return function (...params: Array<any>) {
     if (!target) return;
     return target[methodName].apply(target, params);
