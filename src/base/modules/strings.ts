@@ -14,6 +14,7 @@ export function splitIgnoreQuotes(str: string, separator = ",") {
     const char = str[i];
     if (char === '"' || char === "'") {
       inQuote = !inQuote;
+      current += char;
     } else if (char === separator && !inQuote) {
       result.push(current);
       current = "";
