@@ -32,3 +32,10 @@ export declare function linkSet(data: any, key: string, value: any): any;
  */
 export declare function linkGet(data: any, key: string): any;
 export declare function deepClone(t: any): any;
+/**
+ * 包装此对象的方法, 并且转发到源对象的方法上
+ * @param t
+ * @param methodName
+ * @returns
+ */
+export declare function callDispatch(t: any | (() => any), methodName: any): (...params: Array<any>) => any;
