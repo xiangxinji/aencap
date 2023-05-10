@@ -1,4 +1,4 @@
-declare type Index = number | string;
+type Index = number | string;
 export declare function useRefs(): [Map<Index, any>, {
     set: (e: any, index: Index) => void;
     remove: (index: Index) => void;

@@ -1,4 +1,4 @@
-declare type Option = {
+type Option = {
     label: string;
     key: string | number;
 };

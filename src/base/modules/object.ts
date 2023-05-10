@@ -38,7 +38,7 @@ export function each(obj: object, callback: Function) {
 
 /**
  * 遍历这个对象, 返回一个新的对象
- * @param obj 目标对象 
+ * @param obj 目标对象
  * @param callback 执行回调 { value : 值 , key : 键 }
  */
 export function map(obj: object, callback: Function) {
@@ -51,13 +51,12 @@ export function map(obj: object, callback: Function) {
   return r;
 }
 
-
 /**
  * 嵌套设置对象的值
- * @param data 
- * @param key 
- * @param value 
- * @returns 
+ * @param data
+ * @param key
+ * @param value
+ * @returns
  */
 export function linkSet(data: any, key: string, value: any) {
   const keys = key.split(".");
@@ -76,9 +75,9 @@ export function linkSet(data: any, key: string, value: any) {
 
 /**
  * 嵌套获取对象的值
- * @param data 
- * @param key 
- * @returns 
+ * @param data
+ * @param key
+ * @returns
  */
 export function linkGet(data: any, key: string) {
   const keys = key.split(".");
@@ -90,9 +89,21 @@ export function linkGet(data: any, key: string) {
   return temp;
 }
 
+export function deepClone(t: any) {
+  return JSON.parse(JSON.stringify(t));
+}
 
+/**
+ * 包装此对象的方法, 并且转发到源对象的方法上
+ * @param t
+ * @param methodName
+ * @returns
+ */
+export function callDispatch(t: any | (() => any), methodName: any) {
+  return function (...params: Array<any>) {
+    const target = typeof t === "function" ? t() : t;
 
-export function deepClone (t : any ) {
-  return JSON.parse(JSON.stringify(t))
-  
+    if (!target) return;
+    return target[methodName].apply(target, params);
+  };
 }
