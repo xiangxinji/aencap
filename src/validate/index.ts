@@ -85,3 +85,11 @@ export function isRgb(str: string) {
 export function isRgba(str: string) {
   return str.indexOf('rgba(') === 0
 }
+
+
+/**
+ * 默认值
+ */
+export function defaultValue<T>(fallbackValue: T, value?: T): T {
+  return (isDef(value) ? value : fallbackValue) as T;
+}

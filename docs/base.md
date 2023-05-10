@@ -167,3 +167,15 @@ import { splitIgnoreQuotes } from "@binary-star/aencap/base";
 
 console.log(splitIgnoreQuotes('a,b,c,"d,e,f"')) // ['a','b','c','"d,e,f"']
 ```
+
+
+## classComputed
+
+将 array , string , object 转换并且合并为 css class 字符串
+
+```ts
+import { classComputed } from "@binary-star/aencap/base";
+
+console.log(classComputed('loading' , ['fill' , 'disabled'] , { lock : true })) // 'loading fill disabled lock'
+```
+
