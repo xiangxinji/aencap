@@ -18,3 +18,53 @@ if (start && end)
     return node.tagName === "aside";
   });
 ```
+
+
+
+
+## fullScreen
+
+将一个 dom 进行全屏展示
+
+```ts
+import { dom } from "@binary-star/aencap";
+
+const { fullScreen } = dom;
+
+const div = document.getElementById('div')
+
+// 进行全屏展示
+fullScreen(div)
+
+```
+
+
+## exitScreen 
+
+如果当前时全屏展示时 ， 调用该方法退出全屏
+
+```ts
+import { dom } from "@binary-star/aencap";
+
+const { exitScreen } = dom;
+
+exitScreen()
+```
+
+
+## isFullscreen 
+
+判断当前是否处于全屏展示
+
+```ts
+
+import { dom } from "@binary-star/aencap";
+
+const { isFullscreen } = dom;
+
+const flag = isFullscreen()
+
+```
+
+
+
