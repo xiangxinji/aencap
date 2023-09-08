@@ -8,3 +8,4 @@ export * from './modules/lang';
 export * from './modules/calc';
 export * from './modules/number';
 export * from './modules/strings';
+export * from './modules/view';
