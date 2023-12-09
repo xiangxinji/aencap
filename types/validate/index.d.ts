@@ -55,3 +55,7 @@ export declare function isRgb(str: string): boolean;
  * @returns
  */
 export declare function isRgba(str: string): boolean;
+/**
+ * 默认值
+ */
+export declare function defaultValue<T>(fallbackValue: T, value?: T): T;

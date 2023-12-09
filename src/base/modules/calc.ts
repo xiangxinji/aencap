@@ -84,3 +84,16 @@ export const computeTwoNumber = (
 
   return intToFloat(num, decimalPlaces);
 };
+
+// 创建一个 n * n 的矩阵
+export function createMatrix(MAX_ROW: number, MAX_COL: number) {
+  const matrix = [];
+  for (let i = 0; i < MAX_ROW; i++) {
+    const row = [];
+    for (let j = 0; j < MAX_COL; j++) {
+      row.push(null);
+    }
+    matrix.push(row);
+  }
+  return matrix;
+}
