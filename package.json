@@ -1,6 +1,6 @@
 {
   "name": "@binary-star/aencap",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "自定义功能封装库",
   "types": "./types",
   "private": false,
