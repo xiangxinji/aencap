@@ -1,5 +1,5 @@
 import type { Ref } from "vue";
-export type IDefineFormOptions<T> = {
+export declare type IDefineFormOptions<T> = {
     formModel: T;
     formRef: Ref<any>;
     onGet?: (formModel: T, formType: IDefineFormOptions<T>["formType"]) => T | null;

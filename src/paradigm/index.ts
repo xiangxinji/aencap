@@ -1,6 +1,9 @@
 
 import { defineController } from './controller'
 import { Controller } from './controller/controller'
+import { defineWatcher, runWatchers } from './watcher'
+import { Watcher } from './watcher/watcher'
+
 
 
 type DefineOptions = {
@@ -8,6 +11,12 @@ type DefineOptions = {
      * 控制器列表
      */
     controllers: Array<Controller<any>>
+
+    /**
+     * 监听器列表
+     */
+    watchers: Array<Watcher>
+
 }
 
 /**
@@ -23,4 +32,21 @@ export function define(options: DefineOptions) {
     })
 
 
+    const { watchers } = options
+    watchers.forEach((watcher) => {
+        defineWatcher(watcher)
+    })
+
+
+    return {
+        runWatchers: () => {
+            runWatchers(watchers)
+        },
+        watchers,
+        controllers
+    }
+
+
+
 }
+

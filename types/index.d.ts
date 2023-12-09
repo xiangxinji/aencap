@@ -7,3 +7,4 @@ export * as interactive from "./interactive";
 export * as tree from "./tree";
 export * as dom from "./dom";
 export * as validate from "./validate";
+export * as paradigm from "./paradigm";

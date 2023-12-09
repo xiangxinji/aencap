@@ -34,6 +34,7 @@
     "./hooks": "./lib/hooks/index.js",
     "./interactive": "./lib/interactive/index.js",
     "./tree": "./lib/tree/index.js",
-    "./validate": "./lib/validate/index.js"
+    "./validate": "./lib/validate/index.js",
+    "./paradigm": "./lib/paradigm/index.js"
   }
 }

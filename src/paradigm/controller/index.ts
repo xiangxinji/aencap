@@ -1,5 +1,7 @@
 import { Controller } from './controller'
 
+export * from './controller'
+
 let i = 0;
 
 function genControllerId() {

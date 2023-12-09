@@ -1,5 +1,6 @@
 import { Ref, UnwrapRef, ref } from 'vue'
-import { Constructor } from '../types/helper'
+
+export type Constructor<T> = new (...args: any[]) => T
 
 
 export type ControllerCtor<State = any> = Constructor<Controller<State>>
@@ -15,8 +16,9 @@ export abstract class Controller<State> {
      */
     deps: Array<Controller<any>> = [];
 
-    constructor(state: Constructor<State>) {
-        this.state = ref(Object.create(state))
+    constructor(stateCtor: Constructor<State>) {
+
+        this.state = ref(new stateCtor())
     }
 
     /**
